@@ -6,7 +6,7 @@ for evalfun = 1:10
 	disp(str)
 	for g = {'sample_uniform' 'sample_bernoulli' 'sample_normal'}
 		for N = [10 100 1000 10000]
-			experiment(N, M, g{:}, 1);
+			experiment(N, M, g{:}, evalfun);
 		end
 	end
 end
