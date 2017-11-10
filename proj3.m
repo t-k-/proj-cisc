@@ -5,7 +5,7 @@ for evalfun = 1:10
 	str = sprintf('Evaluating function #%d:', evalfun);
 	disp(str)
 	for g = {'sample_uniform' 'sample_bernoulli' 'sample_normal'}
-		for N = [10 100 1000 10000]
+		for N = [10 20 50 1000 10000]
 			experiment(N, M, g{:}, evalfun);
 		end
 	end
