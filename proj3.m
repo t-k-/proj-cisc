@@ -11,6 +11,8 @@ for evalfun = 1:10
 	end
 end
 
+%experiment(1000, M, 'sample_normal', 1);
+
 function p = experiment(N, M, genfun, evalfun)
 	cnt = 0;
 	for m = 1:M
@@ -25,14 +27,7 @@ function p = experiment(N, M, genfun, evalfun)
 		elseif strcmp(genfun, 'sample_normal') == 1
 			sigma = rand() * 2;
 			u = rand();
-			while true
-				x = sample_normal(N, sigma, u);
-				x = x(x >= 0);
-				x = x(x <= 1);
-				if length(x) > 2
-					break
-				end
-			end
+			x = sample_normal(N, sigma, u);
 		else
 			disp('error')
 			return
